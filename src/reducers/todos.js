@@ -24,7 +24,7 @@ const allIds = (state = [], action) => {
 };
 
 const todos = combineReducers(
-  byIds,
+  byId,
   allIds
 )
 
