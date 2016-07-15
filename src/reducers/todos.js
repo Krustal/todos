@@ -23,17 +23,18 @@ const allIds = (state = [], action) => {
   }
 };
 
-const todos = combineReducers(
+const todos = combineReducers({
   byId,
-  allIds
-)
+  allIds,
+});
 
 export default todos;
 
 // Selectors
 // returns array of todos for the given state, useful for easily handling display
 // of historical state without requiring large object stores.
-const getAllTodos = (state) => state.allIds.map(id => state.byId[id]);
+const getAllTodos = (state) =>
+  state.allIds.map(id => state.byId[id]);
 
 export const getVisibleTodos = (state, filter) => {
   const allTodos = getAllTodos(state);
